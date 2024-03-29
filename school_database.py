@@ -136,7 +136,7 @@ def cursos_disponíveis(BD_Name : str):
                 cursos_disp.append(curso)
         return cursos_disp
 
-# Adicionar formando   ---------------WORK IN PROGRESS----------------------
+# Adicionar formando 
 
 def formandos_disponiveis(BD_Name):
     formandos_matriculados = loadData("formando",BD_Name)
@@ -185,7 +185,7 @@ def add_formando(BD_Name):
     conn.close()
     return nbr #se vazio falhou, se com valor tem o index da linha do dado inserido
 
-def add_matricula(BD_Name): #### WORK IN PROGRESS
+def add_matricula(BD_Name):
     """
     Adicionar 1 formando a um curso: Argumentos: database
     """
@@ -221,7 +221,7 @@ def add_matricula(BD_Name): #### WORK IN PROGRESS
         if cursos:
             Clear_Terminal()
             print(f"\nSelecione o curso a atribuir ao formando: {formandos[op_formando]}\n")
-            op_curso = beaupy.select(cursos_formatado, cursor="->", cursor_style="green", return_index=True) ### Trabalhar a apresentação deste beaupy
+            op_curso = beaupy.select(cursos_formatado, cursor="->", cursor_style="green", return_index=True)
             curso_id = cursos[op_curso][0]
             matricula = (formando_id, curso_id)
             cursor = conn.cursor()
